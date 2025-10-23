@@ -24,3 +24,7 @@
 
 3. HENRY TIMOTHY ISAIAH 23/2550
    I worked on the submit_quiz.php. This page handles the process after a participant submits their quiz. It collects the quiz answers, calculates the user's total score, and saves the results into the database. I also ensured the script validates the answers properly and gives feedback to user once their submission is successful.
+
+
+4. MADUKANZE CHINONSO VICTORY 23/2409
+   I worked on the view_individual_result.php. This displays the detailed result of each student's  quiz attempt. It retrieves the user's score, answers and performance from the database and shows them.
