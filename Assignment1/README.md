@@ -16,3 +16,7 @@
 
 1. AKINNAWO TOMIWA SMART 23/1874
    I worked on the db.php and the take_quiz.php. The db.php connects the project to the database and the take_quiz.php allows the users to take the online quiz where the participants would input their name and proceed to take the quiz. The name input makes it compulsory for participants to put in their name before they proceed to submit the quiz and I also used internal styling for the css of the file.
+
+
+2. AIBOR VERA EBOSETALE 23/2607
+   I worked on the view_results.php.This file displays the quiz score for every participant that partook in the quiz after submission. it fetches the scores from the database and presents them in a clear format. I also used intername styling for it.
