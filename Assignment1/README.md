@@ -19,4 +19,4 @@
 
 
 2. AIBOR VERA EBOSETALE 23/2607
-   I worked on the view_results.php.This file displays the quiz score for every participant that partook in the quiz after submission. it fetches the scores from the database and presents them in a clear format. I also used intername styling for it.
+   I worked on the view_results.php.This file displays the quiz score for every participant that partook in the quiz after submission. it fetches the scores from the database and presents them in a clear format. I also used internal styling for it.
