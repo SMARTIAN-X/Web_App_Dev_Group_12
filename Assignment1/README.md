@@ -20,3 +20,7 @@
 
 2. AIBOR VERA EBOSETALE 23/2607
    I worked on the view_results.php.This file displays the quiz score for every participant that partook in the quiz after submission. it fetches the scores from the database and presents them in a clear format. I also used internal styling for it.
+
+
+3. HENRY TIMOTHY ISAIAH 23/2550
+   I worked on the submit_quiz.php. This page handles the process after a participant submits their quiz. It collects the quiz answers, calculates the user's total score, and saves the results into the database. I also ensured the script validates the answers properly and gives feedback to user once their submission is successful.
