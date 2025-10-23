@@ -15,4 +15,4 @@
 ## CONTRIBUTIONS
 
 1. AKINNAWO TOMIWA SMART 23/1874
-   I worked on the db.php and the take_quiz.php. The db.php connects the project to the database and the take_quiz.php allows the users to take the online quiz where the participants would input their name and proceed to take the quiz. The name input makes it compulsory for participants to put in their name before they proceed to submit the quiz and I also used internal styling for the css of the fi
+   I worked on the db.php and the take_quiz.php. The db.php connects the project to the database and the take_quiz.php allows the users to take the online quiz where the participants would input their name and proceed to take the quiz. The name input makes it compulsory for participants to put in their name before they proceed to submit the quiz and I also used internal styling for the css of the file.
