@@ -42,7 +42,94 @@ if (!$questionsRes) {
 <head>
   <meta charset="utf-8">
   <title>Result for <?php echo $username; ?> — Quiz System</title>
+    
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
 
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #222;
+    }
+
+    .lead {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      background: #f9fafb;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .question h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      color: #333;
+    }
+
+    .question p {
+      margin: 4px 0;
+    }
+
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .wrong {
+      color: red;
+      font-weight: bold;
+    }
+
+    .explanation {
+      margin-top: 8px;
+      background: #fff8c4;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      margin: 0 5px;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
