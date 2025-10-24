@@ -28,3 +28,7 @@
 
 4. MADUKANZE CHINONSO VICTORY 23/2409
    I worked on the view_individual_result.php. This displays the detailed result of each student's  quiz attempt. It retrieves the user's score, answers and performance from the database and shows them.
+
+
+5. NWANKWO WISDOM UCHECHUKWU 23/1937
+   I worked on the styling for the view_individual_result.php. I employed internal CSS so that the page containing the detailed result would be pretty readable, and has a nice presentation of the score of the user anf their performance overall.
