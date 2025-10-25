@@ -30,52 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Add Quiz Questions</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f7f7f7;
-            padding: 20px;
-        }
-        form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 400px;
-            margin: auto;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        input[type="text"], select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 8px 0;
-        }
-        input[type="submit"] {
-            background: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background: #0056b3;
-        }
-        .nav-links {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .nav-links a {
-            background: #28a745;
-            color: white;
-            padding: 10px 15px;
-            margin: 5px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .nav-links a:hover {
-            background: #1e7e34;
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -116,3 +71,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
+
