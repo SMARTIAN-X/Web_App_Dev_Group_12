@@ -7,7 +7,6 @@ include 'db.php';
   <meta charset="utf-8">
   <title>Take Quiz — Quiz System</title>
   <style>
-    /* ====== Base Styles ====== */
     * {
       box-sizing: border-box;
     }
@@ -43,7 +42,7 @@ include 'db.php';
       font-size: 15px;
     }
 
-    /* ====== Input Field ====== */
+    /* Input Field */
     label {
       font-weight: 600;
       display: block;
@@ -69,7 +68,7 @@ include 'db.php';
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
     }
 
-    /* ====== Question Card ====== */
+    /* Question Card */
     .question {
       margin-bottom: 25px;
       padding: 20px;
@@ -115,7 +114,7 @@ include 'db.php';
       transform: scale(1.1);
     }
 
-    /* ====== Buttons ====== */
+    /* Buttons */
     .actions {
       text-align: center;
       margin-top: 30px;
