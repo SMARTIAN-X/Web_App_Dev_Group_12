@@ -1,4 +1,5 @@
 <?php
+
 include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $option_d = $_POST['option_d'];
     $correct_option = $_POST['correct_option'];
 
+   
     if (!empty($question) && !empty($option_a) && !empty($option_b) && !empty($option_c) && !empty($option_d) && !empty($correct_option)) {
         $sql = "INSERT INTO questions (question_text, option_a, option_b, option_c, option_d, correct_option)
                 VALUES ('$question', '$option_a', '$option_b', '$option_c', '$option_d', '$correct_option')";
@@ -28,7 +30,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Add Quiz Questions</title>
-    
+    <style>
+        body {
+            font-family: Arial;
+            background: #f7f7f7;
+            padding: 20px;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        input[type="submit"] {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+        .nav-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .nav-links a {
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            background: #1e7e34;
+        }
+    </style>
 </head>
 <body>
 
@@ -61,6 +108,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <input type="submit" value="Add Question">
 </form>
+
+<div class="nav-links">
+    <a href="take_quiz.php">Take Quiz</a>
+    <a href="submit_quiz.php">Submit Quiz</a>
+</div>
 
 </body>
 </html>
