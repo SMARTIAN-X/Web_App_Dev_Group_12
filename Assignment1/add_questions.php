@@ -1,74 +1,81 @@
 <?php
-
 include 'db.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $question = $_POST['question'];
-    $option_a = $_POST['option_a'];
-    $option_b = $_POST['option_b'];
-    $option_c = $_POST['option_c'];
-    $option_d = $_POST['option_d'];
-    $correct_option = $_POST['correct_option'];
+$message = ""; // store message
 
-   
-    if (!empty($question) && !empty($option_a) && !empty($option_b) && !empty($option_c) && !empty($option_d) && !empty($correct_option)) {
-        $sql = "INSERT INTO questions (question_text, option_a, option_b, option_c, option_d, correct_option)
-                VALUES ('$question', '$option_a', '$option_b', '$option_c', '$option_d', '$correct_option')";
+// Only run the logic if the form is submitted via POST
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
+    $question = trim($_POST['question'] ?? '');
+    $option_a = trim($_POST['option_a'] ?? '');
+    $option_b = trim($_POST['option_b'] ?? '');
+    $option_c = trim($_POST['option_c'] ?? '');
+    $option_d = trim($_POST['option_d'] ?? '');
+    $correct_option = trim($_POST['correct_option'] ?? '');
 
-        if (mysqli_query($conn, $sql)) {
-            echo "<p style='color: green;'>✅ Question added successfully!</p>";
+    if ($question && $option_a && $option_b && $option_c && $option_d && $correct_option) {
+        $sql = "INSERT INTO questions (question, option_a, option_b, option_c, option_d, correct_answer)
+                VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        if ($stmt) {
+            $stmt->bind_param("ssssss", $question, $option_a, $option_b, $option_c, $option_d, $correct_option);
+            if ($stmt->execute()) {
+                $message = "✅ Question added successfully!";
+            } else {
+                $message = "❌ Error adding question: " . htmlspecialchars($stmt->error);
+            }
+            $stmt->close();
         } else {
-            echo "<p style='color: red;'>❌ Error: " . mysqli_error($conn) . "</p>";
+            $message = "❌ SQL prepare failed: " . htmlspecialchars($conn->error);
         }
     } else {
-        echo "<p style='color: red;'>⚠️ Please fill in all fields.</p>";
+        $message = "⚠️ Please fill in all fields.";
     }
 }
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Add Quiz Questions</title>
-    
+    <meta charset="UTF-8">
+    <title>Add Quiz Question</title>
 </head>
 <body>
 
-<h2 style="text-align:center;">Add a New Quiz Question</h2>
+<h2>Add New Quiz Question</h2>
+
+<?php if (!empty($message)): ?>
+    <p><?php echo $message; ?></p>
+<?php endif; ?>
 
 <form method="POST" action="">
-    <label>Question:</label>
-    <textarea name="question" required></textarea>
+    <label>Question:</label><br>
+    <textarea name="question" required></textarea><br><br>
 
-    <label>Option A:</label>
-    <input type="text" name="option_a" required>
+    <label>Option A:</label><br>
+    <input type="text" name="option_a" required><br><br>
 
-    <label>Option B:</label>
-    <input type="text" name="option_b" required>
+    <label>Option B:</label><br>
+    <input type="text" name="option_b" required><br><br>
 
-    <label>Option C:</label>
-    <input type="text" name="option_c" required>
+    <label>Option C:</label><br>
+    <input type="text" name="option_c" required><br><br>
 
-    <label>Option D:</label>
-    <input type="text" name="option_d" required>
+    <label>Option D:</label><br>
+    <input type="text" name="option_d" required><br><br>
 
-    <label>Correct Option (A, B, C, or D):</label>
+    <label>Correct Option (A, B, C, or D):</label><br>
     <select name="correct_option" required>
         <option value="">--Select--</option>
         <option value="A">A</option>
         <option value="B">B</option>
         <option value="C">C</option>
         <option value="D">D</option>
-    </select>
+    </select><br><br>
 
-    <input type="submit" value="Add Question">
+    <input type="submit" name="submit" value="Add Question">
 </form>
 
-<div class="nav-links">
-    <a href="take_quiz.php">Take Quiz</a>
-    <a href="submit_quiz.php">Submit Quiz</a>
-</div>
+<p><a href="take_quiz.php">Take Quiz</a></p>
 
 </body>
 </html>
-
